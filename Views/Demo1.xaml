@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="MyLayer.Views.Demo1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyLayer.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+  
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" Text="{Binding ClockText,StringFormat=窗体在{0}秒后关闭}" FontSize="20" VerticalAlignment="Center"></TextBlock>
+        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock Grid.Row="1" Text="数据每5秒刷新一次" FontSize="18"></TextBlock>
+            <TextBlock Grid.Row="1" Text="{Binding CeshiText}" HorizontalAlignment="Center" Margin="0,10" FontSize="16"></TextBlock>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

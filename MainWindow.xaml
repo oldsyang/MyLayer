@@ -1,0 +1,44 @@
+﻿<Window x:Class="MyLayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyLayer"
+        xmlns:viewModels="clr-namespace:MyLayer.ViewModels"
+        mc:Ignorable="d" ResizeMode="NoResize"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="窗口弹出效果：" VerticalAlignment="Center" FontSize="16"></TextBlock>
+            <ComboBox Width="300" ItemsSource="{Binding AnimationTypeCollection}" SelectedItem="{Binding SelectedAnimationType}" HorizontalAlignment="Left" Height="30">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Value}"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,10">
+            <TextBlock Text="是否右阴影：" VerticalAlignment="Center" FontSize="16"></TextBlock>
+            <CheckBox IsChecked="{Binding HasShadow}" Content="阴影" UseLayoutRounding="True" HorizontalAlignment="Center"  VerticalAlignment="Center" Style="{DynamicResource CheckToogleButton}" Height="30" Width="100" FontWeight="Normal" />
+
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="是否可移动：" VerticalAlignment="Center" FontSize="16"></TextBlock>
+            <CheckBox IsChecked="{Binding  IsCandrag}" Content="可移动" UseLayoutRounding="True" HorizontalAlignment="Center"  VerticalAlignment="Center" Style="{DynamicResource CheckToogleButton}" Height="30" Width="100" FontWeight="Normal" />
+
+        </StackPanel>
+        <Button Grid.Row="3" Content="打开浮层窗口" Command="{Binding OpenMyLayerWinCommand}" Height="50" ></Button>
+
+    </Grid>
+    <Window.DataContext>
+        <viewModels:MainWindowViewModel x:Name="vm"></viewModels:MainWindowViewModel>
+    </Window.DataContext>
+</Window>
