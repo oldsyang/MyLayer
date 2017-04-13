@@ -1,5 +1,5 @@
 # 向大家分享在项目中编写的比较实用的控件：MyLayer，弹窗控件
-### lib文件夹中放的是控件的源码dll，该dll包含大量本人在这几年项目中的控件，现在逐步编写到github上，[github地址](https://github.com/y19890902q/MyWPFUI.git)，感谢ay的支持
+### lib文件夹中放的是控件的源码dll，该dll包含大量本人在这几年项目中的控件，现在逐步编写到github上，[github地址](https://github.com/oldsyang/MyWPFUI.git)，感谢ay的支持
 我在源代码的基础上进行了深度的改造，让使用者更加方便，功能更加强大。源码我都加了注释。
 ## MyLayerServices的ShowDialog方法满足不同的需求。
 ```C#
